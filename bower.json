@@ -1,0 +1,22 @@
+{
+  "name": "classpulse",
+  "description": "'App that allows presenters to poll an audience in real-time'",
+  "main": "client/index.html",
+  "authors": [
+    "Daniel Tunon"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/danieltunon/classpulse-mvp",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "client/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.3"
+  }
+}
