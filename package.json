@@ -1,0 +1,27 @@
+{
+  "name": "classpulse",
+  "version": "1.0.0",
+  "description": "'App that allows presenters to poll an audience in real-time'",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danieltunon/classpulse-mvp.git"
+  },
+  "author": "Daniel Tunon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danieltunon/classpulse-mvp/issues"
+  },
+  "homepage": "https://github.com/danieltunon/classpulse-mvp#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "socket.io": "^1.4.5"
+  }
+}
