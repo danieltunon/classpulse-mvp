@@ -1,0 +1,4 @@
+<p>{{ quiz.question }}</p>
+<form action="">
+  <input type="radio" ng-model="response" value="{{ $index }}" ng-repeat="answer in quiz.answers">{{ answer }}<input>
+</form>
