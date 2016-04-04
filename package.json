@@ -2,7 +2,7 @@
   "name": "classpulse",
   "version": "1.0.0",
   "description": "'App that allows presenters to poll an audience in real-time'",
-  "main": "server.js",
+  "main": "server/server.js",
   "directories": {
     "test": "test"
   },
