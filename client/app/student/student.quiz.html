@@ -3,5 +3,5 @@
   <p ng-repeat="answer in quiz.answers">
     <input type="radio" ng-model="quiz.response" value="{{ $index }}" />{{ answer }}
   </p>
-  <button>Submit</button>
+  <button ng-click="submitResponse()">Submit</button>
 </form>

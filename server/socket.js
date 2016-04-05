@@ -7,6 +7,7 @@ module.exports = function socketConfig(io) {
     });
 
     socket.on('newQuiz', function(quiz) {
+      console.log('server got new quiz');
       io.emit('newQuiz', quiz);
     });
 
