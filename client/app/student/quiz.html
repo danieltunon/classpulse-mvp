@@ -1,4 +1,7 @@
 <p>{{ quiz.question }}</p>
-<form action="">
-  <input type="radio" ng-model="response" value="{{ $index }}" ng-repeat="answer in quiz.answers">{{ answer }}<input>
+<form novalidate>
+  <p ng-repeat="answer in quiz.answers">
+    <input type="radio" ng-model="quiz.response" value="{{ $index }}" />{{ answer }}
+  </p>
+  <button>Submit</button>
 </form>

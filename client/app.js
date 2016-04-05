@@ -1,7 +1,9 @@
 var classPulse = angular.module( 'classPulse', [
   'classPulse.auth',
   'classPulse.services',
-  'ngRoute'
+  'classPulse.student',
+  'ngRoute',
+  'ui.router'
 ])
 
 .config(function($routeProvider) {
@@ -10,12 +12,17 @@ var classPulse = angular.module( 'classPulse', [
       templateUrl: 'app/auth/signin.html',
       controller: 'AuthController'
     })
+    .when('/student', {
+      templateUrl: 'app/student/student.html',
+      controller: 'StudentController'
+    })
     .otherwise({
       templateUrl: 'app/auth/landing.html',
       controller: 'AuthController'
     });
+    
 })
 
 .run(function($location) {
-  $location.url('/landing')
-})
+  $location.url('/landing');
+});

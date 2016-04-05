@@ -8,5 +8,6 @@ var port = process.env.PORT || 5959;
 
 // Middleware: serves static files
 require('./middleware.js')(app, express);
+require('./routes.js')(app, express);
 
 server.listen(port, () => console.log('Listening for connections on:', port));
