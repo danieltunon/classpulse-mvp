@@ -6,23 +6,27 @@ var classPulse = angular.module( 'classPulse', [
   'ui.router'
 ])
 
-.config(function($routeProvider) {
-  $routeProvider
-    .when('/signin', {
+.config(function($stateProvider, $urlRouterProvider) {
+  $urlRouterProvider.otherwise('/landing');
+  $stateProvider
+    .state('landing', {
+      url: '/landing',
+      templateUrl: 'app/auth/landing.html',
+      controller: 'AuthController'
+    })
+    .state('signin', {
+      url: '/signin',
       templateUrl: 'app/auth/signin.html',
       controller: 'AuthController'
     })
-    .when('/student', {
-      templateUrl: 'app/student/student.html',
+    .state('student.quiz', {
+      templateUrl: 'app/student/student.quiz.html',
       controller: 'StudentController'
     })
-    .otherwise({
-      templateUrl: 'app/auth/landing.html',
-      controller: 'AuthController'
+    .state('student', {
+      url: '/student',
+      templateUrl: 'app/student/student.html',
+      controller: 'StudentController'
     });
-    
-})
 
-.run(function($location) {
-  $location.url('/landing');
 });

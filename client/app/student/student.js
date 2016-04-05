@@ -1,6 +1,6 @@
 angular.module('classPulse.student', [])
 
-.controller('StudentController', function($scope) {
+.controller('StudentController', function($scope, $state) {
   $scope.quiz = {
     question: 'Is this a real question?',
     answers: [
@@ -11,6 +11,5 @@ angular.module('classPulse.student', [])
     ],
     response: 'poo'
   };
-
 
 });
