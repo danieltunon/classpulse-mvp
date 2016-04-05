@@ -1,7 +1,8 @@
 angular.module('classPulse.student', [])
 
-.controller('StudentController', function($scope, $rootScope, $window) {
-  $scope.quiz = {};
+.controller('StudentController', function($scope, $rootScope, $window, $state) {
+  $scope.quiz = {now: 'before event'};
+  $scope.test = 'i am the right one'
 
   $scope.submitResponse = function() {
     $rootScope.socket.emit('studentResponse', {
@@ -11,9 +12,14 @@ angular.module('classPulse.student', [])
   };
 
   $rootScope.socket.on('newQuiz', function(quiz) {
-    console.log(quiz);
-    $scope.$apply(function() {
-      $scope.quiz = quiz;
+    console.log('student heard newquiz, here is scope')
+    console.dir( $scope );
+    $scope.quiz = quiz;
+    $state.go('student.quiz')
+    .then(function(){
+        console.log('student after transition, here is scope')
+        $scope.$digest();
+        console.dir( $scope );
     });
   });
 

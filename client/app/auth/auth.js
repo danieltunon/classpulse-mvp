@@ -12,11 +12,7 @@ angular.module('classPulse.auth', [])
           console.log(accountType);
           if ( accountType === 'teacher' ) {
             $window.localStorage.setItem('com.classPulse.quizzes', JSON.stringify([]));
-            $state.go('teacher')
-            .then(function() {
-              console.log('emit as teacher')
-              $rootScope.socket.emit('newQuiz', {question: 'test q', answers: ['first', 'second', 'third']});
-            });
+            $state.go('teacher');
           } else {
             $state.go('student.pending')
           }

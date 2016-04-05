@@ -12,7 +12,6 @@ angular.module('classPulse.services', [])
       data: user
     })
     .then(function(res) {
-      console.log(res);
       return res.data;
     });
   }
