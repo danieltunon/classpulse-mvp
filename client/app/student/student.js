@@ -12,15 +12,12 @@ angular.module('classPulse.student', [])
   };
 
   $rootScope.socket.on('newQuiz', function(quiz) {
-    console.log('student heard newquiz, here is scope')
+    console.log('student heard newquiz, here is scope');
     console.dir( $scope );
     $scope.quiz = quiz;
-    $state.go('student.quiz')
-    .then(function(){
-        console.log('student after transition, here is scope')
-        $scope.$digest();
-        console.dir( $scope );
-    });
+    console.log('student after reset, here is scope');
+    $scope.$digest();
+    console.dir( $scope );
   });
 
 });

@@ -1,4 +1,8 @@
 <main>
-  <div ui-view></div>
+  <div>
+    <pre>
+      responses: {{ responses | json:spacing }}
+    </pre>
+  </div>
   <button ng-click="test()">test</test>
 </main>

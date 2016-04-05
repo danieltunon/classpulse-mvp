@@ -1,6 +1,6 @@
 angular.module('classPulse.auth', [])
 
-.controller('AuthController', function($scope, $rootScope, $window, $state, Auth) {
+.controller('AuthController', function($scope, $rootScope, $window, $location, Auth) {
   $scope.user = {};
 
   $scope.signin = function signin() {
@@ -12,9 +12,9 @@ angular.module('classPulse.auth', [])
           console.log(accountType);
           if ( accountType === 'teacher' ) {
             $window.localStorage.setItem('com.classPulse.quizzes', JSON.stringify([]));
-            $state.go('teacher');
+            $location.url('/teacher');
           } else {
-            $state.go('student.pending')
+            $location.url('/student')
           }
         });
     });
