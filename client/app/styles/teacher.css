@@ -9,6 +9,10 @@
   text-align: left;
 }
 
-.correct {
+.input-group:focus {
   background-color: #1abc9c;
+}
+
+.input-group {
+  cursor: pointer;
 }
