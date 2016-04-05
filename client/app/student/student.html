@@ -2,10 +2,10 @@
   <p>{{ quiz.question }}</p>
   <form action="" novalidate ng-submit="preventDefault()">
     <p ng-repeat="answer in quiz.answers">
-      <input type="radio" ng-model="quiz.response" value="{{ $index }}" />{{ answer }}
+      <input type="radio" ng-model="quiz.response" ng-change="submitResponse()" value="{{ $index }}" />{{ answer }}
     </p>
-    <button ng-click="submitResponse()">Submit</button>
   </form>
+  <button ng-click="submitResponse()">Submit</button>
   <pre>
     quiz: {{ quiz }}
   </pre>
