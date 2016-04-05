@@ -10,6 +10,4 @@ angular.module('classPulse.student', [])
     });
   });
 
-  $rootScope.socket.emit('clienttest');
-
 });
