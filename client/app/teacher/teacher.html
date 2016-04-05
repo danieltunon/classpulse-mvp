@@ -1,8 +1,57 @@
-<main>
-  <div>
-    <pre>
-      responses: {{ responses | json:spacing }}
-    </pre>
+<main class="teacher">
+  <div class="container">
+    <article class="col-md-6 col-md-offset-3">
+      <section class="row">
+        <div class="well">
+          <p>
+            <button class="btn btn-primary">Create Quiz</button>
+          </p>
+          <p>There is currently no active quiz. Make a new question here.</p>
+        </div>
+      </section>
+      <section class="row">
+        <div class="create-quiz well">
+          <form action="" role="form" novalidate ng-submit="preventDefault()">
+            <div class="form-group">
+              <p>Question:</p>
+              <textarea class="form-control" rows="2" ng-model="quiz.question" placeholder="Add the question..."></textarea>
+            </div>
+            <div class="form-group quiz-answers">
+              <p>Answers:</p>
+              <div class="input-group" ng-repeat="answer in quiz.answers">
+                <span class="input-group-btn correct"><button class="btn btn-default" type="button" ng-click="markCorrect($index)"><span class="fui-check"></button></span></span>
+                <input type="text" class="form-control" value="{{ answer }}">
+                <span class="input-group-btn"><button class="btn btn-danger">X</button></span>
+              </div>
+              <div class="input-group add-answer">
+                <input type="text" class="form-control" ng-model="newAnswer">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button" ng-click="addAnswer()">+</button>
+                </span>
+              </div><!-- /input-group -->
+            </div>
+          </form>
+        </div>
+      </section>
+
+            <!--  old -->
+            <!-- <div class="form-group">
+              <label class="radio" for="radioq{{ $index }}" ng-repeat="answer in quiz.answers">
+                <input type="radio" name="optionsRadios" ng-model="quiz.response" data-toggle="radio" value="{{ $index }}" id="radioq{{ $index }}" required checked>
+                  {{ answer }}
+              </label>
+            </div>
+        <div class="well">
+        <button class="btn btn-primary" ng-click="submitResponse()">Submit</button>
+          <pre>quiz: {{ quiz }}</pre>
+        </div> -->
+      <section>
+        <div>
+          <pre>responses: {{ responses }}<br>quiz: {{ quiz }}<br>newAnswer: {{ newAnswer }}<br>correctAnswer: {{ correctAnswer }}</pre>
+          <button ng-click="test()">test</test>
+        </div>
+      </section>
+    </article>
   </div>
-  <button ng-click="test()">test</test>
+
 </main>

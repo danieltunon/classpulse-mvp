@@ -1,12 +1,81 @@
-<main>
-  <p>{{ quiz.question }}</p>
-  <form action="" novalidate ng-submit="preventDefault()">
-    <p ng-repeat="answer in quiz.answers">
-      <input type="radio" ng-model="quiz.response" ng-change="submitResponse()" value="{{ $index }}" />{{ answer }}
-    </p>
-  </form>
-  <button ng-click="submitResponse()">Submit</button>
-  <pre>
-    quiz: {{ quiz }}
-  </pre>
+<main class="student">
+  <div class="container">
+    <article class="col-md-6 col-md-offset-3">
+      <section class="row">
+        <div class="well">
+          <p>Please wait for teacher to send a quiz</p>
+        </div>
+      </section>
+      <section class="row">
+        <div class="quiz well">
+          <p>{{ quiz.question }}</p>
+          <form action="" role="form" novalidate ng-submit="preventDefault()">
+            <div class="form-group">
+              <label class="radio" for="radioq{{ $index }}" ng-repeat="answer in quiz.answers">
+                <input type="radio" name="optionsRadios" ng-model="quiz.response" data-toggle="radio" value="{{ $index }}" id="radioq{{ $index }}" required checked>
+                  {{ answer }}
+              </label>
+            </div>
+          </form>
+          <button class="btn btn-primary" ng-click="submitResponse()">Submit</button>
+        </div>
+        <div class="well">
+          <pre>quiz: {{ quiz }}</pre>
+        </div>
+      </section>
+    </article>
+  </div>
 </main>
+
+<!-- <p ng-repeat="answer in quiz.answers">
+  <input type="radio" ng-model="quiz.response" ng-change="submitResponse()" value="{{ $index }}" />{{ answer }}
+</p> -->
+
+<!-- <div class="form-group">
+  <label class="checkbox" for="checkbox4">
+    <input type="checkbox" data-toggle="checkbox" value="" id="checkbox4" required checked>
+     Option one is this and that&mdash;be sure to include why it's great
+  </label>
+  <label class="radio" for="radio4a">
+    <input type="radio" name="optionsRadios" data-toggle="radio" value="" id="radio4a" required checked>
+     Option one is this and that&mdash;be sure to include why it's great
+  </label>
+  <label class="radio" for="radio4b">
+    <input type="radio" name="optionsRadios" data-toggle="radio" value="" id="radio4b" required>
+     Option one is this and that&mdash;be sure to include why it's great
+  </label>
+  <label class="radio" for="radio4c">
+    <input type="radio" name="optionsRadios" data-toggle="radio" value="" id="radio4c" required>
+     Option one is this and that&mdash;be sure to include why it's great
+  </label>
+</div> -->
+<!--
+<main class="container spa-shell">
+ <div class="row">
+   <article class="col-md-6 col-md-offset-3">
+     <header class="spa-shell-header">
+       <h2><span class="spa-shell-title"></span></h2>
+       <button class="spa-shell-writeTweet btn btn-default">
+         <i class="glyphicon glyphicon-edit"></i> Tweet!
+       </button>
+     </header>
+     <section class="spa-shell-newTweet">
+       <div class="well">
+         <header>
+           <p><span class="spa-shell-newTweet-user">@dummyuser</span>:</p>
+           <button type="button" class="close" data-dismiss="" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+         </header>
+         <form action="">
+           <div class="input-group">
+             <input type="text" id="spa-shell-newTweet-message" class="form-control" placeholder="What\s on your mind..." aria-label="message">
+             <span class="input-group-btn">
+               <button id="post" class="btn btn-primary" type="submit">Post</button>
+             </span>
+           </div>
+         </form>
+       </div>
+     </section>
+     <section class="spa-shell-stream"></section>
+   </article>
+ </div>
+</main> -->

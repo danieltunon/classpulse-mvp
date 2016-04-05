@@ -3,8 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <title>classpulse</title>
+  <link href="/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+  <link href="/lib/Flat-UI-master/dist/css/flat-ui.css" rel="stylesheet">
+  <link href="/app/styles/landing.css" rel="stylesheet">
+  <link href="/app/styles/signin.css" rel="stylesheet">
+  <link href="/app/styles/student.css" rel="stylesheet">
+  <link href="/app/styles/teacher.css" rel="stylesheet">
   <script src="/lib/angular/angular.js"></script>
   <script src="/lib/angular-route/angular-route.js"></script>
+  <script src="/lib/jquery/dist/jquery.js"></script>
+  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+  <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="/lib/Flat-UI-master/dist/js/flat-ui.min.js"></script>
   <script src="/lib/angular-ui-router/release/angular-ui-router.js"></script>
   <script src="http://localhost:5959/socket.io/socket.io.js"></script>
   <script src="/app.js"></script>
@@ -13,7 +23,5 @@
   <script src="/app/student/student.js"></script>
   <script src="/app/teacher/teacher.js"></script>
 </head>
-<body>
-  <div ng-view></div>
-</body>
+<body ng-view></body>
 </html>
