@@ -1,15 +1,15 @@
 angular.module('classPulse.student', [])
 
-.controller('StudentController', function($scope, $state) {
-  $scope.quiz = {
-    question: 'Is this a real question?',
-    answers: [
-      'no',
-      'yes',
-      'i don\'t understand the question',
-      'because I\'m an idiot'
-    ],
-    response: 'poo'
-  };
+.controller('StudentController', function($scope, $rootScope) {
+  $scope.quiz = {};
+
+  $rootScope.socket.on('servertest', function(quiz) {
+    console.log(quiz);
+    $scope.$apply(function() {
+      $scope.quiz = quiz;
+    });
+  });
+
+  $rootScope.socket.emit('clienttest');
 
 });

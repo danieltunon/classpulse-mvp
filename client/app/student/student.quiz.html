@@ -1,5 +1,5 @@
 <p>{{ quiz.question }}</p>
-<form novalidate>
+<form action="" novalidate ng-submit="preventDefault()">
   <p ng-repeat="answer in quiz.answers">
     <input type="radio" ng-model="quiz.response" value="{{ $index }}" />{{ answer }}
   </p>
