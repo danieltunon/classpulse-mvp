@@ -34,15 +34,29 @@
       </section>
       <section class="row">
         <div class="responses well" ng-show="quizSubmitted">
-          <svg class="chart"></svg>
+          <!-- <svg class="chart"></svg> -->
+          <div class="well">
+            <h4>Student Responses</h4>
+            <p ng-repeat="(key, value) in responses"><span class="username">{{ key }}</span> : {{ value }}</p>
+          </div>
+          <!-- <div class="well">
+            <h4>Incorrect Responses</h4>
+            <div class="row">
+              < ng-repeat="answer in quiz.answers | filter: !correctAnswer" <h5></h5>
+              <div class="col-md-2"><p ng-repeat="response in responses | filter : {answer: !correctAnswer}">{{ response.username }} : {{ response.answer }}</p></div>
+            </div>
+          </div> -->
+          <button class="btn btn-warning" ng-click="closeQuiz()" ng-show="open">Close Quiz</button>
+          <button class="btn btn-info" ng-click="reopenQuiz()" ng-hide="open">Reopen Quiz</button>
+          <button class="btn btn-danger" ng-click="resetQuiz()">Clear Quiz</button>
         </div>
       </section>
-      <section class="row">
+      <!-- <section class="row">
         <div>
           <pre>responses: {{ responses }}<br>quiz: {{ quiz }}<br>newAnswer: {{ newAnswer }}<br>correctAnswer: {{ correctAnswer }}</pre>
           <button ng-click="test()">test</test>
         </div>
-      </section>
+      </section> -->
     </article>
   </div>
 

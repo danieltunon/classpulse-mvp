@@ -3,6 +3,8 @@ angular.module('classPulse.student', [])
 .controller('StudentController', function($scope, $rootScope, $window, $state) {
   $scope.quiz = {now: 'before event'};
   $scope.test = 'i am the right one'
+  $scope.activeQuiz = false;
+  $scope.closedQuiz = false;
 
   $scope.submitResponse = function() {
     $rootScope.socket.emit('studentResponse', {
@@ -12,12 +14,25 @@ angular.module('classPulse.student', [])
   };
 
   $rootScope.socket.on('newQuiz', function(quiz) {
-    console.log('student heard newquiz, here is scope');
-    console.dir( $scope );
     $scope.quiz = quiz;
-    console.log('student after reset, here is scope');
+    $scope.activeQuiz = true;
+    $scope.closedQuiz = false;
     $scope.$digest();
-    console.dir( $scope );
+  });
+
+  $rootScope.socket.on('closed', function() {
+    $scope.closedQuiz = true;
+    $scope.$digest();
+  });
+
+  $rootScope.socket.on('reopen', function() {
+    $scope.closedQuiz = false;
+    $scope.$digest();
+  });
+
+  $rootScope.socket.on('resetQ', function() {
+    $scope.activeQuiz = false;
+    $scope.$digest();
   });
 
 });

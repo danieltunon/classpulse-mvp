@@ -3,6 +3,7 @@ var classPulse = angular.module( 'classPulse', [
   'classPulse.services',
   'classPulse.student',
   'classPulse.teacher',
+  'classPulse.responses',
   'ngRoute',
   'ui.router'
 ])

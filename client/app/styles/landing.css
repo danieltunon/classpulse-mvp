@@ -102,8 +102,14 @@ body {
   .masthead-nav {
     float: right;
   }
-}
 
+}
+@media (max-width: 768px) {
+  h1 {
+    font-size: 41px;
+  }
+
+}
 
 /*
  * Cover

@@ -1,12 +1,12 @@
 <main class="student">
   <div class="container">
     <article class="col-md-6 col-md-offset-3">
-      <section class="row">
+      <section class="row" ng-hide="activeQuiz">
         <div class="well">
           <p>Please wait for teacher to send a quiz</p>
         </div>
       </section>
-      <section class="row">
+      <section class="row" ng-show="activeQuiz">
         <div class="quiz well">
           <p>{{ quiz.question }}</p>
           <form action="" role="form" novalidate ng-submit="preventDefault()">
@@ -17,11 +17,11 @@
               </label>
             </div>
           </form>
-          <button class="btn btn-primary" ng-click="submitResponse()">Submit</button>
+          <button class="btn btn-primary" ng-click="submitResponse()" ng-hide="closedQuiz">Submit</button>
         </div>
-        <div class="well">
+        <!-- <div class="well">
           <pre>quiz: {{ quiz }}</pre>
-        </div>
+        </div> -->
       </section>
     </article>
   </div>

@@ -7,9 +7,19 @@ module.exports = function socketConfig(io) {
     });
 
     socket.on('quiz', function(quiz) {
-      console.log('server got new quiz');
-      console.log(quiz);
       io.emit('newQuiz', quiz);
+    });
+
+    socket.on('resetQ', function() {
+      io.emit('resetQ');
+    });
+
+    socket.on('closed', function() {
+      io.emit('closed');
+    });
+
+    socket.on('reopen', function() {
+      io.emit('reopen');
     });
 
   });
